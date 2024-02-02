@@ -11,6 +11,9 @@ let numbers = [40, 68, 14, 90, 49];
 
 // CODE HERE
 
+numbers.forEach(number => {
+  console.log(number / 2)
+})
 
 ////////// PROBLEM 2 //////////
 
@@ -18,11 +21,15 @@ let numbers = [40, 68, 14, 90, 49];
     Use a built-in Javascript method that will loop through the 'numbers' array above, divide each number by 2, and then return a NEW ARRAY.
 
     HINT: .forEach() vs .map() ---- which one does return a new array?
+    //.map creats a new array - so that is what you would do in this case
 
     NOTE: make sure you save the code in a variable, then console.log the variable to see the new array.
 */
 
 // CODE HERE
+
+let divideTwo = numbers.map(number => number / 2)
+console.log(divideTwo)
 
 
 ////////// PROBLEM 3 //////////
@@ -51,6 +58,9 @@ let cities = [
 
 // CODE HERE
 
+let citiesEndI = cities.filter(city => city.endsWith("i"))
+
+console.log(citiesEndI)
 
 ////////// PROBLEM 4 //////////
 
@@ -87,7 +97,15 @@ let fruits = [
 
 // CODE HERE
 
-
+fruits.forEach((fruit, index) => {
+  if (fruit.color === "red" && fruit.name === "apple") {
+    console.log(`The fruit with index ${index} is an apple`)
+  } else if (fruit.color === "orange" && fruit.name === "orange") {
+    console.log(`The fruit with index ${index} is an orange`)
+  } else {
+    console.log(`The fruit with index ${index} is neither apple or orange`)
+  }
+})
 
 /* 
     Run the code in node to see the result. Then, copy and paste the result below.
@@ -101,7 +119,10 @@ let fruits = [
 
 // COPY AND PASTE THE RESULT FROM YOUR CONSOLE (NODE CONSOLE IS YOUR TERMINAL) HERE (AS A MULTI LINES COMMENT)
 
-
+// The fruit with index 0 is neither apple or orange
+// The fruit with index 1 is an orange
+// The fruit with index 2 is neither apple or orange
+// The fruit with index 3 is an apple
 
 ////////// PROBLEM 5 //////////
 
@@ -146,6 +167,16 @@ let foods = [
 
 // CODE HERE
 
+let totalRicePrice = foods.reduce((total, food) => {
+  if (food.tags.includes('rice')) {
+    return total + food.price
+  } else {
+    return total
+  }
+}, 0)
+
+console.log(totalRicePrice)
 
 // THE TOTAL
+//36 total
 
